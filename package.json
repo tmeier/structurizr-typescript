@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha --require ts-node/register test/index.ts",
-    "postinstall": "tsc"
+    "postinstall": "npm install && tsc"
   },
   "repository": {
     "type": "git",

@@ -24,8 +24,8 @@ export class Person extends StaticStructureElement implements IEquatable<Person>
         return [Tags.Element, Tags.Person];
     }
 
-    public interactsWith(destination: Person, description: string, technology?: string, interactionStyle: InteractionStyle = InteractionStyle.Synchronous): Relationship | null {
-        return this.model.addRelationship(this, destination, description, technology, interactionStyle);
+    public interactsWith(destination: Person, description: string, technology?: string, interactionStyle: InteractionStyle = InteractionStyle.Synchronous, ...tags: string[]): Relationship | null {
+        return this.model.addRelationship(this, destination, description, technology, interactionStyle, tags);
     }
 
     public toDto() {

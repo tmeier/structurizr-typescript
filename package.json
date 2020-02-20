@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --require ts-node/register test/index.ts"
+    "test": "mocha --require ts-node/register test/index.ts",
+    "prepack": "tsc"
   },
   "repository": {
     "type": "git",

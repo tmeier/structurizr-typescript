@@ -85,8 +85,13 @@ export class Model {
         return this.getElement(element.id) == element;
     }
 
-    public addRelationship(source: Element, destination: Element, description: string, technology?: string, interactionStyle = InteractionStyle.Synchronous): Relationship | null {
+    public addRelationship(source: Element, destination: Element, description: string, technology?: string, interactionStyle = InteractionStyle.Synchronous, tags?: string[]): Relationship | null {
         var relationship = new Relationship(source, destination, description, technology, interactionStyle);
+        if (tags) {
+            tags.forEach(t => {
+                relationship.tags.add(t);
+            });
+        }
 
         if (!source.relationships.has(relationship)) {
             relationship.id = this._idGenerator.generateId(relationship);

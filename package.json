@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha --require ts-node/register test/index.ts",
-    "prepack": "tsc"
+    "prepack": "build"
   },
   "repository": {
     "type": "git",
